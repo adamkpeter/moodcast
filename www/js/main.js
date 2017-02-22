@@ -1,4 +1,4 @@
-app.controller('main', function ($scope, $ionicModal, localStorageService) { //store the entities name in a variable var taskData = 'task';
+app.controller('mainController', function ($scope, $state, $ionicModal, localStorageService) { //store the entities name in a variable var taskData = 'task';
 
 //initialize the tasks scope with empty array
   $scope.tasks = [];
@@ -42,5 +42,9 @@ app.controller('main', function ($scope, $ionicModal, localStorageService) { //s
       $scope.tasks[index].completed = true;
     }
     localStorageService.set(taskData, $scope.tasks);
+  };
+
+  $scope.goToPlay = function(){
+    $state.go('play');
   }
 });

@@ -29,18 +29,18 @@ app.config(function (localStorageServiceProvider) {
 });
 
 app.config(function($stateProvider, $urlRouterProvider ) {
-  $urlRouterProvider.otherwise('/language')
+  $urlRouterProvider.otherwise('/main');
   $stateProvider.state('main', {
     url: '/main',
-    //templateUrl: 'templates/main.html',
+    templateUrl: 'templates/main.html',
     controller : "mainController"
   })
-/*
-    .state('about',{
-      url: '/about',
-      templateUrl: 'templates/about.html',
-      controller: 'aboutController'
-    })*/
+
+    .state('play',{
+      url: '/play',
+      templateUrl: 'templates/play.html',
+      controller: 'playController'
+    })
 });
 
 // app.controller('main', function ($scope, $ionicModal, localStorageService) { //store the entities name in a variable var taskData = 'task';
