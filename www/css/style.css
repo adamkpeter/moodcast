@@ -28,3 +28,16 @@
 #playPage{
   /*padding-top: 45px;*/
 }
+
+.albumArtContainer{
+  width: 250px;
+  margin:auto;
+}
+
+.albumArt{
+  width: 250px;
+}
+
+.trackMetaDataText{
+  text-align: center;
+}

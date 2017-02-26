@@ -6,7 +6,19 @@
 
     <h1 class="title">Play</h1>
   </ion-header-bar>
-  <ion-content id="playPage">
 
+  <ion-content id="playPage">
+    <div class="albumArtContainer">
+      <img class="albumart" src="{{track.album.images[1].url}}"/>
+    </div>
+    <div class="trackMetaDataText">
+      <div>{{track.name}}</div>
+      <div>{{track.artists[0].name}}</div>
+      <div>{{track.album.name}}</div>
+    </div>
+
+
+    <!--<iframe src="https://p.scdn.co/mp3-preview/70571de42bc2e10e2e12832416beb193b364787e?cid=null"></iframe>-->
   </ion-content>
+
 </ion-view>
