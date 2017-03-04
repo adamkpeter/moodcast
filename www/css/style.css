@@ -1,8 +1,12 @@
 /* Empty. Add your own CSS if you like */
 #mainPage{
   /*padding-top: 45px;*/
-
+    background: url('night.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }
+
 
 #mainPage .header{
   font-size: 22px;
@@ -15,6 +19,7 @@
   width: 100px;
   height: 50px;
   margin: auto;
+  padding-top: 300px;
 }
 
 #mainPage .play-button{
@@ -24,6 +29,8 @@
   background-color: #999999;
   border: 0px solid white;
 }
+
+
 
 #playPage{
   /*padding-top: 45px;*/
