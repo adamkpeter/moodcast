@@ -59,5 +59,26 @@
   margin: auto;
   position: absolute;
   top: 75; bottom: 0; left: 0; right: 0;
+  font-size: 22px;
 
+}
+
+#track_name{
+  padding-bottom: 20px;
+
+
+}
+
+
+
+.music_player{
+	position: absolute;
+	top:400; bottom:0; left:70; right:20;
+	margin: auto;
+
+}
+.thumbs_up{
+	position: absolute;
+	top:300; bottom:0; left:300; right:0;
+	margin: auto;
 }
