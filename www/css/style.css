@@ -47,11 +47,17 @@
 }
 
 .albumArt{
+  width: 220px;
+  height: 220px;
   position: absolute;
-  top: 0; bottom:0; left: 0; right:0;
+  top: 225; bottom:0; left: 0; right:0;
   margin: auto;
 }
 
 .trackMetaDataText{
   text-align: center;
+  margin: auto;
+  position: absolute;
+  top: 75; bottom: 0; left: 0; right: 0;
+
 }
