@@ -50,15 +50,16 @@
   width: 220px;
   height: 220px;
   position: absolute;
-  top: 225; bottom:0; left: 0; right:0;
+  top: 140; bottom:0; left: 0; right:0;
   margin: auto;
 }
+
 
 .trackMetaDataText{
   text-align: center;
   margin: auto;
   position: absolute;
-  top: 75; bottom: 0; left: 0; right: 0;
+  top: 60; bottom: 0; left: 0; right: 0;
   font-size: 22px;
 
 }
@@ -79,6 +80,23 @@
 }
 .thumbs_up{
 	position: absolute;
-	top:300; bottom:0; left:300; right:0;
+	top:300; bottom:0; left:350; right:0;
+	margin: auto;
+}
+.play{
+	position: absolute;
+	top:500; bottom:0; left:10; right:0;
+	padding-right: 400px;
+	margin: auto;
+}
+.pause{
+	position: absolute;
+	top:500; bottom:0; left:0; right:0;
+	margin: auto;
+}
+.skip{
+	position: absolute;
+	top:500; bottom:0; left:200; right:0;
+	padding-left: 200px;
 	margin: auto;
 }
