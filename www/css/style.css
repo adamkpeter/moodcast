@@ -40,17 +40,17 @@
 }
 
 #playPage .albumArtContainer{
-  width: 100px;
-  height: 50px;
+  width: 220px;
+  height: 220px;
   margin: auto;
-  padding-top: 300px;
+  padding-top: 175px;
 }
 
 .albumArt{
   width: 220px;
   height: 220px;
   position: absolute;
-  top: 225; bottom:0; left: 0; right:0;
+  /*top: 225; bottom:0; left: 0; right:0;*/
   margin: auto;
 }
 
@@ -70,15 +70,21 @@
 }
 
 
-
+#loading{
+  width: 200px;
+  margin:auto;
+  text-align:center;
+  margin-top: 100px;
+  font-size: 30px;
+}
 .music_player{
 	position: absolute;
-	top:400; bottom:0; left:70; right:20;
+	top:400px; bottom:0; left:70px; right:20px;
 	margin: auto;
 
 }
 .thumbs_up{
 	position: absolute;
-	top:300; bottom:0; left:300; right:0;
+	top:300px; bottom:0; left:300px; right:0;
 	margin: auto;
 }

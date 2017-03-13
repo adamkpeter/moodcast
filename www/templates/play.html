@@ -1,27 +1,29 @@
 <ion-view view-title="Play" id="play">
 
   <ion-content id="playPage">
-    <div class="albumArtContainer">
-      <img class="albumart" src="{{track.album.images[1].url}}"/>
+    <div id="pageContent" ng-show="contentLoaded">
+      <div class="albumArtContainer">
+        <img class="albumart" src="{{track.album.images[1].url}}"/>
+      </div>
+      <div class="trackMetaDataText">
+        <div id ="track_name">{{track.name}}</div>
+        <div>{{track.album.name}}-{{track.artists[0].name}}</div>
+      </div>
+
+      <div class = "thumbs_up">
+        <img id = "thumbs_up" src ="../img/thumbs_up_button.png"/>
+      </div>
+      <div class = "music_player">
+        <img id = "music_player" src = "../img/music_player.png"/>
+      </div>
     </div>
-    <div class="trackMetaDataText">
-      <div id ="track_name">{{track.name}}</div>
-      <div>{{track.album.name}}-{{track.artists[0].name}}</div>
 
 
-    <div class = "thumbs_up">
-	<img id = "thumbs_up" src ="/home/hghafarshad/Documents/moodcast/www/img/thumbs_up_button.png"/>
-     </div>
-     <div class = "music_player">
-        <img id = "music_player" src = "/home/hghafarshad/Documents/moodcast/www/img/music_player.png"/>
-     <div>
-	</div>
 
-
-    <div id="loading">Loading...</div>
+    <div id="loading" ng-show="!contentLoaded">Loading...</div>
 
     <!--<iframe src="{{source}}"></iframe>-->
-    <iframe src="https://p.scdn.co/mp3-preview/70571de42bc2e10e2e12832416beb193b364787e?cid=null"></iframe>
+    <!--<iframe src="https://p.scdn.co/mp3-preview/70571de42bc2e10e2e12832416beb193b364787e?cid=null"></iframe>-->
   </ion-content>
 
 </ion-view>
