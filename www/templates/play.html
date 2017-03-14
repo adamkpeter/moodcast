@@ -1,6 +1,7 @@
 <ion-view view-title="Play" id="play">
 
   <ion-content id="playPage">
+    <div>{{weather}}</div>
     <div id="pageContent" ng-show="contentLoaded">
       <div class="albumArtContainer">
         <img class="albumart" src="{{track.album.images[1].url}}"/>
@@ -10,12 +11,12 @@
         <div>{{track.album.name}}-{{track.artists[0].name}}</div>
       </div>
 
-      <div class = "thumbs_up">
-        <img id = "thumbs_up" src ="../img/thumbs_up_button.png"/>
-      </div>
-      <div class = "music_player">
-        <img id = "music_player" src = "../img/music_player.png"/>
-      </div>
+      <!--<div class = "thumbs_up">-->
+        <!--<img id = "thumbs_up" src ="../img/thumbs_up_button.png"/>-->
+      <!--</div>-->
+      <!--<div class = "music_player">-->
+        <!--<img id = "music_player" src = "../img/music_player.png"/>-->
+      <!--</div>-->
 
 
       <div class = "thumbs_up">

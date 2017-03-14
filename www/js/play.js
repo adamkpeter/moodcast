@@ -5,18 +5,7 @@ app.controller('playController', function ($scope, $state, Spotify, $ionicModal,
 
   $scope.contentLoaded = false;
 
-  $http({
-    url:"http://ec2-52-37-193-231.us-west-2.compute.amazonaws.com/?ezreal=2ih4temylyfe4&weather=31&time=14&liked=1&disliked=1&preferences=electronic",
-    method: 'GET',
-    transformResponse: [function (data) {
-      console.log(data);
-      return data;
-    }]
-  }).then(function(res){
-    console.log(res);
-  }, function(err){
-    console.log(err);
-  });
+  $scope.weather = "";
 
   // $http.get(
   //   "http://ec2-52-37-193-231.us-west-2.compute.amazonaws.com/?ezreal=2ih4temylyfe4&weather=sun&time=day&liked=1&disliked=1&preferences=electronic|chill").then(
@@ -27,32 +16,59 @@ app.controller('playController', function ($scope, $state, Spotify, $ionicModal,
   //     console.log(err);
   //   });
 
+  var getRecommendations = function(code){
+    var date = new Date();
+    $http({
+      url:"http://ec2-52-37-193-231.us-west-2.compute.amazonaws.com/?ezreal=2ih4temylyfe4&weather="+code+
+      "&time="+date.getHours()+"&liked=1&disliked=1&preferences=electronic|rock|pop|alternative|indie|metal",
+      method: 'GET',
+      transformResponse: [function (data) {
+        console.log(data);
+        return data;
+      }]
+    }).then(function(res){
+      console.log(res);
+      getSong("Little Secrets", "Passion Pit");
+    }, function(err){
+      console.log(err);
+      getSong("Here Comes the Sun", "The Beatles");
+    });
+  };
 
   weatherService.getLatAndLong().then(function(res){
     console.log("Got Latitude and Longitude");
     console.log(res);
-    weatherService.getWeather(res.latitude, res.longitude).then(function(weather){
-      console.log("Got weather");
-      console.log(weather);
-      getSong();
-    }, function(weatherErr){
-      console.log(weatherErr);
-    })
+    $scope.getWeather(res.latitude, res.longitude);
   }, function(err){
     console.log(err);
-    getSong();
+    $scope.getWeather(33.66642,-117.82604472907204);
   });
 
 
-  var getSong = function(){
-    Spotify.search('Another Day of Sun', 'Track').then(function(data){
-      $scope.track = data.tracks.items[0];
-      console.log($scope.track);
-      $scope.source = $scope.track.preview_url;
+  $scope.getWeather = function(lat, long){
+    weatherService.getWeather(lat, long).then(
+      function(weather){
+        getRecommendations(weather.code);
+      },
+      function(weatherErr){
+        console.log(weatherErr);
+        getRecommendations(32);
+      }
+    );
+  };
 
-      $scope.contentLoaded = true;
-      //angular.element(document.querySelector('#loading')).html = "";
-      //audioObject.play();
+  var getSong = function(track, artist){
+    Spotify.search(track, 'Track', {limit: 50}).then(function(data){
+      var stop = false;
+      angular.forEach(data.tracks.items, function(item){
+        if(item.artists[0].name == artist && !stop) {
+          console.log(item);
+          $scope.track = item;
+          $scope.source = $scope.track.preview_url;
+          stop = true;
+          $scope.contentLoaded = true;
+        }
+      });
     });
   };
 
